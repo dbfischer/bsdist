@@ -180,7 +180,7 @@ plugin.Tx_Formhandler.settings.predef.form-simple {
 
             admin {
                 # ---------------------------------- change ------------------------------
-                to_email = info@simple.ch
+                to_email = info@example.com
                 to_name =
                 subject = Formular
                 return_path =
@@ -214,7 +214,7 @@ plugin.Tx_Formhandler.settings.predef.form-simple {
                 to_name < plugin.Tx_Formhandler.settings.predef.form-simple.finishers.5.config.admin.sender_name
 
                 subject = Formular
-                sender_email = info@simple.ch
+                sender_email = info@example.com
                 sender_name =
                 replyto_email =
                 replyto_name =

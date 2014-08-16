@@ -12,7 +12,7 @@ formhandler.nlsubscr {
 	email {
 		admin {
 			# cat=Newsletter Subscription/Unsubscription - DirectMail/basic/20; type=string; label=User email sender: Email address to use as sender address for the user email.
-			sender_email = newsletter@simple.ch
+			sender_email = newsletter@example.com
 			# cat=Newsletter Subscription/Unsubscription - DirectMail/basic/21; type=string; label=User email sender: Name to use as sender name for the user email.
 			sender_name = Newsletter xyz
 		}

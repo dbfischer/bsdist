@@ -2,6 +2,7 @@
  * Definition of custom subcategories
  */
 # customsubcategory=domain=Domain(s) of website
+# customsubcategory=layout=Layout settings
 # customsubcategory=language=Language settings
 # customsubcategory=extension=Extension settings
 # customsubcategory=video=Video settings
@@ -16,7 +17,7 @@ content {
 
     # remove tt_address (if not used for direct_mail)
     # direct mail does not require tt_address (in 4.0.0), but creates the table columns anyway
-    shortcut.tables := removeFromList(tt_address)
+    #shortcut.tables := removeFromList(tt_address)
 }
 styles.content {
     imgtext {
@@ -28,19 +29,13 @@ styles.content {
         colSpace = 30
         rowSpace = 30
 
-        # click-enlarge
         linkWrap {
             width = 1200
-            # open new window for each click-enlarge
             newWindow = 1
-
-            # use prettyphoto for lightbox feature
             lightboxEnabled = 1
             lightboxCssClass = prettyPhoto
             lightboxRelAttribute = prettyPhoto[{field:uid}]
         }
-
-        # border style
         borderThick = 1
         borderSpace = 10
     }
@@ -64,8 +59,8 @@ styles.content {
  */
 plugin.tx_bootstrapcore {
     website {
-        # cat=tx_bootstrapcore.website/domain/010; type=string; label=Website domain: Only the domain without the protocol, e.g. www.simple.ch
-        domain = t3bdev.simpledev.ch
+        # cat=tx_bootstrapcore.website/domain/010; type=string; label=Website domain: Only the domain without the protocol, e.g. www.example.com
+        domain = www.example.com
         lang {
             # cat=tx_bootstrapcore.website/language/010; type=string; label=Default locale: Locale key for default language. Default: de_DE.UTF-8
             locale = de_DE.UTF-8
@@ -73,15 +68,18 @@ plugin.tx_bootstrapcore {
             localeShort = de
         }
         metaNav {
+            # cat=tx_bootstrapcore.website/layout/010; type=string; label=Meta navigation page id
             pageId = 7
         }
         footer {
-            # used for static footer from dedicated page
+            # cat=tx_bootstrapcore.website/layout/010; type=string; label=Page id with footer content (for static footer content)
             pageId = 6
 
-            # slot colPos
+            # cat=tx_bootstrapcore.website/layout/011; type=string; label=Left footer colPos
             leftColPos = 10
+            # cat=tx_bootstrapcore.website/layout/012; type=string; label=Center footer colPos
             centerColPos = 11
+            # cat=tx_bootstrapcore.website/layout/013; type=string; label=Right footer colPos
             rightColPos = 12
         }
     }

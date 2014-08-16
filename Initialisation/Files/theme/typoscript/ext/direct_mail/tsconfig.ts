@@ -15,10 +15,10 @@ mod.web_modules.dmail {
     # from, reply-to, return path
     organisation = Firmenname
 	from_name = Firma
-	from_email = newsmail@simple.ch
-	replyto_name = Simplicity
-	replyto_email = newsmail@simple.ch
-	return_path = media@simple.ch
+	from_email = newsmail@example.com
+	replyto_name = Company
+	replyto_email = newsmail@example.com
+	return_path = media@example.com
     # ---------------------------------- change ------------------------------
 
 	# subject keyword for testmails
@@ -53,8 +53,8 @@ TCEFORM.pages {
         # remove
         #removeItems = 3
         # ...or use and change labels
-        altLabels.0 = Standard Header Bilder
-        altLabels.1 = Header Bilder von dieser Seite
+        altLabels.0 = Default Header Images
+        altLabels.1 = Header Images from this page
         removeItems = 2,3
     }
 }

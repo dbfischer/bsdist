@@ -43,8 +43,8 @@
 
             <!-- EMAIL TEXTS -->
             <label index="email_user_greetings">Hello</label>
-            <label index="email_user_footer">simplicity gmbh</label>
-            <label index="email_user_footer_link">www.simple.ch</label>
+            <label index="email_user_footer">company</label>
+            <label index="email_user_footer_link">www.example.com</label>
             <!-- EMAIL TEXTS: Subscription -->
             <label index="email_user_subject">Newsletter subscription</label>
             <label index="email_user_text">Sie haben sich für unseren Newsletter angemeldet. Bitte klicken Sie auf den folgenden Link, um die Anmeldung abzuschließen:</label>
@@ -102,8 +102,8 @@
 
             <!-- EMAIL TEXTS -->
             <label index="email_user_greetings">Hallo</label>
-            <label index="email_user_footer">simplicity gmbh</label>
-            <label index="email_user_footer_link">www.simple.ch</label>
+            <label index="email_user_footer">company</label>
+            <label index="email_user_footer_link">www.example.com</label>
             <!-- EMAIL TEXTS: Subscription -->
             <label index="email_user_subject">Newsletter Anmeldung</label>
             <label index="email_user_text">Sie haben sich für unseren Newsletter angemeldet. Bitte klicken Sie auf den folgenden Link, um die Anmeldung abzuschließen:</label>

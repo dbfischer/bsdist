@@ -19,9 +19,9 @@ plugin.tx_felogin_pi1 {
 
    	# email (forgot password)
     # ---------------------------------- change ------------------------------
-    email_from = info@simple.ch
-    email_fromName = Simplicity
-    replyTo = info@simple.ch
+    email_from = info@example.com
+    email_fromName = Company
+    replyTo = info@example.com
     # ---------------------------------- change ------------------------------
 
 
