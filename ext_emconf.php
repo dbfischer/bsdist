@@ -12,13 +12,13 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Bootstrap Kickstart Package',
-	'description' => 'This package imports a preconfigured page tree for a new website and installs bootstrap_core. Includes a set of files (typoscript, css, js, tmpl) for the website and some extensions. See directory fileadmin/bsdist/theme/ after the installation. Install only in an empty TYPO3 instance without any pages or backend_layouts!',
+	'description' => 'This package imports a preconfigured page tree for a new website and installs bootstrap_core. A set of files (typoscript, css, js, tmpl) for the website layout is included. May not work out-of-the-box if pages or backend_layouts exist already.',
 	'category' => 'distribution',
-	'author' => 'Pascal Mayer',
+	'author' => 'simplicity',
 	'author_email' => 'typo3@simple.ch',
-	'author_company' => 'simplicity gmbh',
+	'author_company' => 'Simplicity GmbH',
 	'shy' => '',
-	'version' => '1.0.0',
+	'version' => '1.0.1',
 	'priority' => '',
 	'module' => '',
 	'state' => 'beta',
@@ -40,24 +40,19 @@ $EM_CONF[$_EXTKEY] = array (
 		'conflicts' =>  array (
 			// other bootstrap packages
 			'bootstrap_package' => '',
-
 			// other distributions
 			'introduction' => '',
-			'dp_kickstart' => '',
-			'og_base' => '',
-			't3onepage' => '',
 		),
 		'suggests' =>  array (
+			'bootstrap_grids' => '1.0.0-0.0.0',
+			'iconfont' => '0.5.0-0.0.0',
+
 			'felogin' => '6.2.0-0.0.0',
 			'indexed_search' => '6.2.0-0.0.0',
 
 			'formhandler' => '2.0.0-0.0.0',
 			'news' 		  => '3.0.0-0.0.0',
 			'direct_mail' => '4.0.0-0.0.0',
-
-			'bootstrap_grids' => '0.9.0-0.0.0',
-			'slider_pack' => '0.9.0-0.0.0',
-			'iconfont' => '0.2.0-0.0.0',
 		),
 	),
 );
