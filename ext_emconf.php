@@ -33,7 +33,6 @@ $EM_CONF[$_EXTKEY] = array (
 			'typo3' => '6.2.0-6.2.99',
 			'bootstrap_core' => '1.0.0-1.0.99',
 			// auto install
-			'realurl'     => '1.12.0-0.0.0',
 			'scheduler' => '6.2.0-0.0.0',
 			'recycler' => '6.2.0-0.0.0',
 		),
