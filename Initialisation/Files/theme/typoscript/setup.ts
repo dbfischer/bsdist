@@ -382,7 +382,7 @@ lib {
 	logo.wrap = <div class="logo">|</div>
 	logo {
 		10 = TEXT
-		10.value = <img src="{$plugin.tx_bootstrapcore.theme.baseDir}/img/logo.png" class="logo" />
+		10.value = <img src="{$plugin.tx_bootstrapcore.theme.baseDir}/img/logo.png" class="logo img-responsive" />
 		10.typolink.parameter = 1
 		#10.typolink.ATagParams = class="logo"
         /*
@@ -422,16 +422,16 @@ lib {
 
             # colPos (same for v1 and v2)
             select.where = colPos={$plugin.tx_bootstrapcore.website.footer.leftColPos}
-            stdWrap.wrap = <div class="col-md-4 col-sm-6">|</div>
+            stdWrap.wrap = <div class="col-md-4 col-sm-4">|</div>
         }
         # center footer col
         20 < .10
         20.select.where = colPos={$plugin.tx_bootstrapcore.website.footer.centerColPos}
-        20.stdWrap.wrap = <div class="col-md-4 col-sm-12 text-center">|</div>
+        20.stdWrap.wrap = <div class="col-md-4 col-sm-4 text-center">|</div>
         # right footer col
         30 < .10
         30.select.where = colPos={$plugin.tx_bootstrapcore.website.footer.rightColPos}
-        30.stdWrap.wrap = <div class="col-md-4 col-sm-12 text-right">|</div>
+        30.stdWrap.wrap = <div class="col-md-4 col-sm-4 text-right">|</div>
 	}
 
 	copyright = COA

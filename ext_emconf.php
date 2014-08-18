@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Bootstrap Kickstart Package',
-	'description' => 'This package imports a preconfigured page tree for a new website and installs bootstrap_core. A set of files (typoscript, css, js, tmpl) for the website layout is included. May not work out-of-the-box if pages or backend_layouts exist already.',
+	'description' => 'This package imports an initial page tree for a new website and installs bootstrap_core. A collection of files (typoscript, css, js, tmpl) for the website layout and a few extensions is included. Ready to start developing.',
 	'category' => 'distribution',
 	'author' => 'simplicity',
 	'author_email' => 'typo3@simple.ch',
