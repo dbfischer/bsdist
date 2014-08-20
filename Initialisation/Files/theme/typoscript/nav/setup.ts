@@ -39,7 +39,7 @@ lib.navbar {
             IFSUB = 1
             IFSUB < .NO
             IFSUB.wrapItemAndSub = <li class="dropdown">|</li>
-            IFSUB.ATagParams = class="dropdown-toggle disabled" role="button" data-toggle="dropdown" data-target="#"
+            IFSUB.ATagParams = class="dropdown-toggle" role="button" data-toggle="dropdown" data-target="#"
             IFSUB.ATagBeforeWrap = 1
             IFSUB.stdWrap.wrap = |<b class="caret"></b>
             CURIFSUB = 1

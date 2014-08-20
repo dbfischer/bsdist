@@ -27,14 +27,7 @@ config {
     */
     #htmlTag_setParams = lang="de" dir="ltr" class="no-js"
 
-    # Page title before website (tmpl) title
     pageTitleFirst = 1
-
-    # Enable jumpurl
-    #jumpurl_enable = 1
-    #jumpurl_mailto_disable = 1
-
-    # concatenate css & js
     #concatenateCss = 1
     #concatenateJs = 1
 
@@ -50,8 +43,6 @@ config {
  * Page
 */
 page {
-
-    # For fixed header
     #bodyTag = <body class="fixed">
 
     10 = FLUIDTEMPLATE
@@ -116,23 +107,20 @@ page {
         */
         author   =
         robots   = noindex,nofollow
-        google = notranslate
-        apple-mobile-web-app-capable = no
+        #google = notranslate
+        #apple-mobile-web-app-capable = no
     }
 
     includeCSS {
         /*
-        # In bootstrap_core defined
-        # instead of css_styled_content CSS
+        # In bootstrap_core defined instead of css_styled_content CSS
         bootstrap_core = typo3conf/ext/bootstrap_core/Resources/Public/Css/content.css
         */
-        # default bootstrap css
-        bootstrap = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/3.1/css/bootstrap.min.css
+        bootstrap = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/3.2/css/bootstrap.min.css
         bootstrap.forceOnTop = 1
 
-        # Optional: prettyPhoto (lightbox)
+        # Optional
         lightbox = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/prettyphoto/css/prettyPhoto.min.css
-        # Optional: webfont
         /*
         webfont = //fonts.googleapis.com/css?family=Open+Sans:400,600
         webfont {
@@ -147,10 +135,10 @@ page {
     }
 
     headerData {
-        # default stuff
+        /*
         10 = COA
         10 {
-            # Favicon/apple touch link rels
+            # Favicon
             10 = TEXT
             10.value (
                 <link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
@@ -160,15 +148,16 @@ page {
                 <link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
             )
 
-            # Inline scripts, i.e. for IE conditional includes
+            # Inline scripts
             20 = TEXT
             20.value (
 
 <!--[if lt IE 9]>
-<script src="{$plugin.tx_bootstrapcore.theme.libDir}/html5shiv/html5shiv.js"></script>
+<script src="{$plugin.tx_bootstrapcore.theme.libDir}/html5shiv/html5shiv.min.js"></script>
 <![endif]-->
             )
         }
+        */
 
         /*
         # Add CSS-file based on layout selection
@@ -187,17 +176,14 @@ page {
     }
 
     includeJSlibs {
-        # default jquery js
-        jquery = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/jquery-1.11.0.min.js
+        #jquery = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/jquery-1.11.1.min.js
+        jquery = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/jquery-2.1.1.min.js
     }
     includeJSFooterlibs {
-        # default bootstrap js
-        bootstrap = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/3.1/js/bootstrap.min.js
-
-        # Optional: prettyPhoto (lightbox)
+        bootstrap = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/3.2/js/bootstrap.min.js
+        # Optional
         lightbox = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/prettyphoto/js/jquery.prettyPhoto.js
-
-        # site & theme specific
+        # Site & theme specific
         custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/custom.js
     }
 
@@ -217,38 +203,6 @@ page {
 
 }
 
-
-/* --------------------
- * lib.stdheader customizations
- */
-lib.stdheader {
-    /*
-    10 {
-        # Example (not tested): show subheader different for <h1>
-        1 = COA
-        1 {
-            10 = TEXT
-            10 {
-                current = 1
-                stdWrap.dataWrap = <h1{register:headerClass}>|</h1>
-                stdWrap.required = 1
-            }
-            20 = TEXT
-            20 {
-                field = subheader
-                stdWrap.dataWrap = <p class="subheader>|</p>
-                stdWrap.required = 1
-            }
-            stdWrap.dataWrap = <div class="pagetitle">|</div>
-            stdWrap.required = 1
-        }
-
-        # Option: Add custom headline
-        #6 < .1
-        #6.stdWrap.dataWrap = <h3 class="special"><span>|</span></h3>
-    }
-    */
-}
 
 
 /* --------------------
