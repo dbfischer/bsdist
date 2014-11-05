@@ -21,7 +21,7 @@ plugin.tx_indexedsearch {
   # search config
   search {
     # root page to search from
-    rootPidList = {plugin.tx_bootstrapcore.indexed_search.rootPidList}
+    rootPidList = {$plugin.tx_bootstrapcore.indexed_search.rootPidList}
     # number of page links shown
     page_links = 10
   }

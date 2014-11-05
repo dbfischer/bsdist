@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'author_email' => 'typo3@simple.ch',
 	'author_company' => 'Simplicity GmbH',
 	'shy' => '',
-	'version' => '1.1.0',
+	'version' => '1.1.1',
 	'priority' => '',
 	'module' => '',
 	'state' => 'beta',
@@ -31,7 +31,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'constraints' => array (
 		'depends' =>  array (
 			'typo3' => '6.2.0-6.2.99',
-			'bootstrap_core' => '1.0.0-1.0.99',
+			'bootstrap_core' => '1.2.0-0.0.0',
 			'scheduler' => '6.2.0-0.0.0',
 			'recycler' => '6.2.0-0.0.0',
 		),
@@ -42,10 +42,8 @@ $EM_CONF[$_EXTKEY] = array (
 		'suggests' =>  array (
 			'bootstrap_grids' => '1.0.0-0.0.0',
 			'iconfont' => '0.5.0-0.0.0',
-
 			'felogin' => '6.2.0-0.0.0',
 			'indexed_search' => '6.2.0-0.0.0',
-
 			'formhandler' => '2.0.0-0.0.0',
 			'news' 		  => '3.0.0-0.0.0',
 			'direct_mail' => '4.0.0-0.0.0',
