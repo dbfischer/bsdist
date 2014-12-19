@@ -8,7 +8,7 @@ lib.langnav {
     20 {
         special = language
         special.value = 0,1,2
-        sepcial.normalWhenNoLanguage = 0
+        special.normalWhenNoLanguage = 0
         wrap = |
 
         1 = TMENU
