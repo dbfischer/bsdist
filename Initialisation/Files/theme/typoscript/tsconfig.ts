@@ -14,6 +14,8 @@ mod.SHARED {
 # Default backend usergroup and rights for new pages
 TCEMAIN {
     permissions {
+        # default begroup owner of new pages
+        groupid = 1
         # allowed actions: show,edit,delete,new,editcontent
         user = show,edit,delete,new,editcontent
         group = show,edit,delete,new,editcontent
@@ -29,6 +31,10 @@ TCEMAIN {
 # -----------------------------------------------------------------------------
 #
 TCEFORM.pages {
+    # sysfolder with backend layouts
+    backend_layout.PAGE_TSCONFIG_ID = 3
+    backend_layout_next_level.PAGE_TSCONFIG_ID = 3
+
     # works (3 = footer)
     backend_layout.removeItems = -1
     backend_layout_next_level.removeItems = -1
