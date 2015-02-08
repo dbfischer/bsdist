@@ -2,23 +2,17 @@
 
 /***************************************************************
  * Extension Manager/Repository config file for ext "bsdist".
- *
- * Auto generated 23-05-2014 10:41
- *
- * Manual updates:
- * Only the data in the array - everything else is removed by next
- * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Bootstrap Kickstart Package',
 	'description' => 'This distribution package imports an initial page tree for a new website and installs bootstrap_core. A collection of files (typoscript, css, js, tmpl) for the website layout and a few extensions is included. See www.bsdist.ch',
 	'category' => 'distribution',
-	'author' => 'simplicity',
-	'author_email' => 'typo3@simple.ch',
-	'author_company' => 'Simplicity GmbH',
+	'author' => 'Pascal Mayer',
+	'author_email' => 'typo3@bsdist.ch',
+	'author_company' => '',
 	'shy' => '',
-	'version' => '1.1.2',
+	'version' => '1.2.0',
 	'priority' => '',
 	'module' => '',
 	'state' => 'beta',
@@ -29,24 +23,24 @@ $EM_CONF[$_EXTKEY] = array (
 	'clearCacheOnLoad' => 1,
 	'lockType' => '',
 	'constraints' => array (
-		'depends' =>  array (
+		'depends' => array (
 			'typo3' => '6.2.0-6.2.99',
-			'bootstrap_core' => '1.2.0-0.0.0',
-			'scheduler' => '6.2.0-0.0.0',
-			'recycler' => '6.2.0-0.0.0',
+			'bootstrap_core' => '1.2.1-0.0.0',
+			// no dependency, only auto install
+			'scheduler' => '6.2.0-6.2.99',
+			'recycler' => '6.2.0-6.2.99',
 		),
-		'conflicts' =>  array (
+		'conflicts' => array (
 			'bootstrap_package' => '',
 			'introduction' => '',
 		),
-		'suggests' =>  array (
-			'bootstrap_grids' => '1.0.0-0.0.0',
+		'suggests' => array (
+			'bootstrap_grids' => '1.1.0-0.0.0',
 			'iconfont' => '0.5.0-0.0.0',
-			'felogin' => '6.2.0-0.0.0',
-			'indexed_search' => '6.2.0-0.0.0',
+			'felogin' => '6.2.0-6.2.99',
+			'indexed_search' => '6.2.0-6.2.99',
 			'formhandler' => '2.0.0-0.0.0',
 			'news' 		  => '3.0.0-0.0.0',
-			'direct_mail' => '4.0.0-0.0.0',
 		),
 	),
 );
