@@ -7,7 +7,7 @@ lib.langnav {
     20 = HMENU
     20 {
         special = language
-        special.value = 0,1,2
+        special.value = 0,1
         special.normalWhenNoLanguage = 0
         wrap = |
 
@@ -18,10 +18,10 @@ lib.langnav {
             NO.linkWrap = <span>|</span>
             # Manual link creation
             NO.doNotLinkIt = 1
-            NO.stdWrap.override = DE || EN || FR
+            NO.stdWrap.override = EN || DE
             NO.stdWrap.typolink {
                 parameter.data = page:uid
-                additionalParams = &L=0 || &L=1 || &L=2
+                additionalParams = &L=0 || &L=1
                 addQueryString = 1
                 addQueryString.exclude = L,id,cHash,no_cache
                 addQueryString.method = GET
