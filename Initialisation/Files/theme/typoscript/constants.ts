@@ -9,7 +9,7 @@
 
 
 /* ----------------------------------------
- * site & theme specific constants for TYPO3
+ * Site & theme default typo3 constants
  */
 content {
     # default header type h2 instead of h1
@@ -55,18 +55,27 @@ styles.content {
 
 
 /* ----------------------------------------
- * theme specific constants for bootstrap core
+ * Site & theme constants for bsdist and bootstrap_core
  */
 plugin.tx_bootstrapcore {
+    theme {
+        #libDir = fileadmin/bsdist/lib
+        bootstrapCssFile = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/dist/css/bootstrap.min.css
+        bootstrapJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/dist/js/bootstrap.min.js
+        jQueryJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/dist/jquery.min.js
+
+        lightboxCssFile = {$plugin.tx_bootstrapcore.theme.libDir}/jquery-prettyPhoto/css/prettyPhoto.min.css
+        lightboxJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/jquery-prettyPhoto/js/jquery.prettyPhoto.js
+    }
+
     website {
-        # cat=tx_bootstrapcore.website/domain/010; type=string; label=Website domain: Only the domain without the protocol, e.g. www.example.com
-        domain = www.example.com
-        lang {
-            # cat=tx_bootstrapcore.website/language/010; type=string; label=Default locale: Locale key for default language. Default: de_DE.UTF-8
-            locale = de_DE.UTF-8
-            # cat=tx_bootstrapcore.website/language/011; type=string; label=Default locale, short: Locale 2-letter key for default language. Default: de
-            localeShort = de
-        }
+        # cat=tx_bootstrapcore.website/domain/010; type=string; label=Website domain: The domain without the protocol, e.g. www.example.com. Only used for direct_mail and news rss feed.
+        domain =
+
+        # change lang locale
+        #lang.locale = de_DE.UTF-8
+        #lang.localeShort = de
+
         metaNav {
             # cat=tx_bootstrapcore.website/layout/010; type=string; label=Meta navigation page id
             pageId = 7
@@ -74,7 +83,6 @@ plugin.tx_bootstrapcore {
         footer {
             # cat=tx_bootstrapcore.website/layout/010; type=string; label=Page id with footer content (for static footer content)
             pageId = 6
-
             # cat=tx_bootstrapcore.website/layout/011; type=string; label=Left footer colPos
             leftColPos = 10
             # cat=tx_bootstrapcore.website/layout/012; type=string; label=Center footer colPos
@@ -86,3 +94,11 @@ plugin.tx_bootstrapcore {
 }
 
 
+# --- Additional extension constants (see setup.ts) ---
+#
+# indexed_search
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/indexed_search/constants.ts">
+# felogin
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/felogin/constants.ts">
+# sr_freecap (for formhandler)
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/sr_freecap/constants.ts">
