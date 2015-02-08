@@ -2,40 +2,20 @@
  * Configuration
  */
 config {
-    # In bootstrap_core defined
-    /*
-    cache_period = 43200
-    sendCacheHeaders = 0
-    absRefPrefix = /
-    prefixLocalAnchors = all
-    extTarget =
-    intTarget =
-    tx_realurl_enable = 1
-    simulateStaticDocuments = 0
-    noScaleUp = 1
+    #htmlTag_setParams = lang="en" dir="ltr"
+    pageTitleFirst = 1
 
-    spamProtectEmailAddresses = ascii
-    # more options, 1 = js encrypted
+    # production
+    #concatenateCss = 1
+    #concatenateJs = 1
+
+    # other options instead of 'ascii', 1 = js encrypted
     #spamProtectEmailAddresses = 1
     #spamProtectEmailAddresses_atSubst = (at)
     #spamProtectEmailAddresses_lastDotSubst = .
 
-    sys_language_uid = 0
-    language = {$plugin.tx_bootstrapcore.website.lang.localeShort}
-    locale_all = {$plugin.tx_bootstrapcore.website.lang.locale}
-    htmlTag_langKey < config.language
-    */
-    #htmlTag_setParams = lang="de" dir="ltr" class="no-js"
-
-    pageTitleFirst = 1
-    #concatenateCss = 1
-    #concatenateJs = 1
-
     # multi lang handling
     #sys_language_softMergeIfNotBlank = tx_news_domain_model_news:categories, tt_content:image, sys_file_reference,sys_file
-
-    #headerComment (
-    #)
 }
 
 
@@ -64,7 +44,6 @@ page {
             # home template
             2 = TEXT
             2.value       = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_home.html
-
             # empty template
             3 = TEXT
             3.value       = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_empty.html
@@ -72,15 +51,11 @@ page {
 
         # Variables in templates
         variables {
-            /*
             # In bootstrap_core defined
-            # content main col (colPos=0)
-            content < styles.content.get
-            */
+            #content < styles.content.get
             # content sidebar
             content_sidebar < styles.content.get
             content_sidebar.select.where = colPos=1
-
             /*
             # Optional: FLUID layout based on page field 'layout'
             containerWrapClass = CASE
@@ -97,92 +72,68 @@ page {
     }
 
     meta {
-        /*
-        # In bootstrap_core defined
-        X-UA-Compatible = IE=edge,chrome=1
-        X-UA-Compatible.httpEquivalent = 1
-        viewport = width=device-width, initial-scale=1.0
-        description = TEXT
-        description.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
-        */
         author   =
+        # development setting
         robots   = noindex,nofollow
-        #google = notranslate
+        # more
         #apple-mobile-web-app-capable = no
     }
 
     includeCSS {
-        /*
-        # In bootstrap_core defined instead of css_styled_content CSS
-        bootstrap_core = typo3conf/ext/bootstrap_core/Resources/Public/Css/content.css
-        */
-        bootstrap = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/3.2/css/bootstrap.min.css
+        # In bootstrap_core set
+        #bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
         bootstrap.forceOnTop = 1
+        # Instead of css_styled_content CSS
+        #bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
+        # Default is prettyPhoto
+        #lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
 
-        # Optional
-        lightbox = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/prettyphoto/css/prettyPhoto.min.css
+        # Webfont
         /*
         webfont = //fonts.googleapis.com/css?family=Open+Sans:400,600
-        webfont {
-            excludeFromConcatenation = 1
-            external = 1
-            forceOnTop = 1
-        }
+        webfont.excludeFromConcatenation = 1
+        webfont.external = 1
+        webfont.forceOnTop = 1
         */
 
         # Site & theme specific
         custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/custom.min.css
     }
 
-    headerData {
-        /*
-        10 = COA
-        10 {
-            # Favicon
-            10 = TEXT
-            10.value (
-                <link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
-                <link rel="apple-touch-icon-precomposed" sizes="144x144" href="fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
-                <link rel="apple-touch-icon-precomposed" sizes="114x114" href="fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
-                <link rel="apple-touch-icon-precomposed" sizes="72x72" href="fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
-                <link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
-            )
+    #headerData.10 = COA
+    /*
+    headerData.10 {
+        # Favicon
+        10 = TEXT
+        10.value (
+            <link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
+            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
+            <link rel="apple-touch-icon-precomposed" sizes="114x114" href="fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
+            <link rel="apple-touch-icon-precomposed" sizes="72x72" href="fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
+            <link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
+        )
 
-            # Inline scripts
-            20 = TEXT
-            20.value (
+        # Inline scripts
+        20 = TEXT
+        20.insertData = 1
+        20.value (
 
-<!--[if lt IE 9]>
-<script src="{$plugin.tx_bootstrapcore.theme.libDir}/html5shiv/html5shiv.min.js"></script>
-<![endif]-->
-            )
-        }
-        */
-
-        /*
-        # Add CSS-file based on layout selection
-        20 = CASE
-        20 {
-            stdWrap.wrap = <link rel="stylesheet" type="text/css" href="fileadmin/bsdist/theme/css/#" media="all">
-            stdWrap.splitChar = #
-            key.data = levelfield:-1, layout, slide
-            # default add-on css
-            default = TEXT
-            default.value = layout_default.css
-            2 = TEXT
-            2.value = layout_news.css
-        }
-        */
+            <!--[if lt IE 9]>
+            <script src="{$plugin.tx_bootstrapcore.theme.libDir}/html5shiv/dist/html5shiv.min.js"></script>
+            <![endif]-->
+        )
     }
+    */
 
     includeJSlibs {
-        #jquery = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/jquery-1.11.1.min.js
-        jquery = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/jquery-2.1.1.min.js
+        # In bootstrap_core set
+        #jquery = {$plugin.tx_bootstrapcore.theme.jQueryJsFile}
     }
     includeJSFooterlibs {
-        bootstrap = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/3.2/js/bootstrap.min.js
-        # Optional
-        lightbox = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/prettyphoto/js/jquery.prettyPhoto.js
+        # In bootstrap_core set
+        #bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
+        #lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
+
         # Site & theme specific
         custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/custom.js
     }
@@ -209,21 +160,19 @@ page {
  * tt_content customizations
  */
 tt_content {
+    /*
     div {
-        /*
         override.cObject {
             default.value = <hr>
             1.value = <hr class="style2">
             2.value = <hr class="style3">
         }
-        */
     }
     media {
-        /*
         # for use with fitvids
         20.mimeConf.swfobject.layout = <div class="embed-container">###SWFOBJECT###</div>
-        */
     }
+    */
 
     /* --------------------
      * Image max size (based on backend_layout)
@@ -254,8 +203,8 @@ tt_content {
         }
     }
 
+    /*
     uploads.20 {
-        /*
         linkProc {
             combinedLink = 0
             jumpurl >
@@ -317,8 +266,8 @@ tt_content {
                 }
             }
         }
-        */
     }
+    */
 
     /* --------------------
      * Use header fields in gridelements (remove if not used)
@@ -444,3 +393,32 @@ lib {
 */
 
 
+/* --------------------
+ * More configurations
+ */
+
+# Navigations
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/nav/setup.ts">
+
+# Multilang config and lang nav
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/lang/multilang.ts">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/lang/langnav.ts">
+
+
+# --- Additional extension setups (see constants.ts) ---
+#
+# - You have to install and configure the extensions first.
+#
+# indexed_search
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/indexed_search/setup.ts">
+# felogin
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/felogin/setup.ts">
+
+# bootstrap_grids
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/grids/setup.ts">
+# iconfont
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/iconfont/setup.ts">
+
+# formhandler
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/formhandler/setup.ts">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/sr_freecap/setup.ts">
