@@ -13,11 +13,11 @@ plugin.tx_felogin_pi1 {
     #forgotLinkHashValidTime = 12
 
     # Allowed Referrer-Redirect-Domains:
-   	#domains =
+    #domains =
 
-   	dateFormat = d.m.Y H:i
+    dateFormat = d.m.Y H:i
 
-   	# email (forgot password)
+    # email (forgot password)
     # ---------------------------------- change ------------------------------
     email_from = info@example.com
     email_fromName = Company
@@ -44,5 +44,15 @@ plugin.tx_felogin_pi1 {
     changePasswordNotValidMessage_stdWrap.wrap = <div class="alert alert-warning">|</div>
     changePasswordTooShortMessage_stdWrap.wrap = <div class="alert alert-warning">|</div>
     changePasswordNotEqualMessage_stdWrap.wrap = <div class="alert alert-warning">|</div>
+    /*
+    _LOCAL_LANG.default {
+        username = Email Address
+        ll_enter_your_data = Email Address
+    }
+    _LOCAL_LANG.de {
+        username = E-Mail Adresse
+        ll_enter_your_data = E-Mail Adresse
+    }
+    */
 }
 

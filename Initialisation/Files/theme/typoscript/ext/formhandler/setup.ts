@@ -12,7 +12,7 @@ plugin.Tx_Formhandler.settings {
 plugin.Tx_Formhandler.settings.predef.form-simple {
 
     # Common configuration
-    name = Standard Kontaktformular
+    name = Contact form
     debug = 0
     addErrorAnchors = 1
 
@@ -53,23 +53,6 @@ plugin.Tx_Formhandler.settings.predef.form-simple {
         uploadFolder = uploads/formhandler/
         enableAjaxFileRemoval = 1
     }
-
-
-    # Validators configuration
-    # see below
-    #validators
-
-    # Interceptors configuration
-    # see below
-    #initInterceptors
-
-    # Loggers configuration
-    # see below
-    #loggers
-
-    # Finishers configuration
-    # see below
-    #finishers
 
 
     # --- Validators ---
@@ -235,12 +218,17 @@ plugin.Tx_Formhandler.settings.predef.form-simple {
 
         # (9) Display submitted values online
         #
+        /*
         9.class = Tx_Formhandler_Finisher_SubmittedOK
         9.config {
             returns = 1
             actions {
             }
         }
+        */
+
+        9.class =  Tx_Formhandler_Finisher_Redirect
+
 
     }
 
@@ -256,6 +244,7 @@ plugin.Tx_Formhandler.settings.predef.form-simple {
                 1.website.defaultValue.value = http://
             }
         }
+        #2.class = Tx_Formhandler_PreProcessor_LoadGetPost
     }
 }
 
@@ -274,26 +263,19 @@ plugin.Tx_Formhandler.settings.predef.form-simple {
                 # only needed if where filter is based on territory
                 #leftjoin = static_territories ON (static_countries.cn_parent_tr_iso_nr=static_territories.tr_iso_nr)
 
-                # additional orderby hostlist and hostlist sorting
-                leftjoin = static_territories ON (static_countries.cn_parent_tr_iso_nr=static_territories.tr_iso_nr) LEFT JOIN tx_staticinfotables_hotlist ON (static_countries.uid=tx_staticinfotables_hotlist.uid_local)
-
                 # load fields
                 selectFields = static_countries.uid, static_countries.cn_short_en, static_countries.cn_short_local
                 # load other/morefields
                 #selectFields = static_countries.uid, static_countries.cn_short_en, static_countries.cn_iso_3
 
                 # --- filter countries ---
+                where = static_territories.tr_parent_iso_nr=150
                 # only EU countries (without switzerland!:)
                 #where = static_countries.cn_eu_member = 1
-                # Countries in europe (based on parent territory id)
-                #where = static_territories.tr_parent_iso_nr=150 AND tx_staticinfotables_hotlist.tablenames=static_countries
-                # get hostlist entries
-                where = static_territories.tr_parent_iso_nr=150 AND (tx_staticinfotables_hotlist.tablenames="static_countries" OR tx_staticinfotables_hotlist.tablenames IS NULL)
 
                 # --- orderby ---
-                #orderBy = static_countries.cn_short_en
+                orderBy = static_countries.cn_short_en
                 #orderBy = static_countries.cn_short_local
-                orderBy = tx_staticinfotables_hotlist.tablenames DESC,tx_staticinfotables_hotlist.sorting ASC,static_countries.cn_short_en
             }
             renderObj = TEXT
             renderObj {

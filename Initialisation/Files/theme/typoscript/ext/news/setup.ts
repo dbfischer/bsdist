@@ -18,21 +18,21 @@ plugin.tx_news {
         #cropMaxCharacters = 150
 
         # don't use/show dummy image
-        displayDummyIfNoMedia = 0
+        displayDummyIfNoMedia = 1
 
         # list view
         list {
             media {
                 image {
-                    #maxWidth = 100
-                    #maxHeight = 100
+                    maxWidth = 100
+                    maxHeight = 100
                 }
                 #dummyImage = typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png
             }
             paginate {
                 itemsPerPage = 10
                 insertAbove = 0
-                #insertBelow = 1
+                insertBelow = 1
                 # add next/prev links in header (for screen reader?)
                 #prevNextHeaderTags = 1
             }
