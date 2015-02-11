@@ -137,6 +137,18 @@
         <p>###LINKTOOTHERMODE###</p>
     </form>
 </div>
+
+<script type="text/javascript">
+( function($) {
+    $(document).ready(function() {
+        $('.tx-indexedsearch-browsebox ul.browsebox').attr('class', 'pagination');
+        $('.tx-indexedsearch-browselist-currentPage').find('strong').contents().unwrap();
+        $('.tx-indexedsearch-browselist-currentPage').attr('class', 'active');
+        $('strong.tx-indexedsearch-redMarkup').attr('class', 'text-danger');
+    });
+} ) ( jQuery );
+  </script>
+
 <!-- ###SEARCH_FORM### end -->
 <br /><br />
 
