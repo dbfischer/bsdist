@@ -269,19 +269,18 @@ TCEFORM.tt_content {
     layout {
         types {
             textpic {
-                addItmes {
+                addItems {
                     10 = Responsive
                 }
             }
             image {
-                addItmes.10 = Responsive
+                addItems.10 = Responsive
             }
             div {
                 altLabels.0 = Normal
-                }
             }
-
         }
+  }
 
     # Image position options
     /*
