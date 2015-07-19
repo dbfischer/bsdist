@@ -12,7 +12,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'author_email' => 'typo3@bsdist.ch',
 	'author_company' => '',
 	'shy' => '',
-	'version' => '1.2.2',
+	'version' => '1.2.3',
 	'priority' => '',
 	'module' => '',
 	'state' => 'beta',
@@ -24,11 +24,11 @@ $EM_CONF[$_EXTKEY] = array (
 	'lockType' => '',
 	'constraints' => array (
 		'depends' => array (
-			'typo3' => '6.2.0-7.2.99',
-			'bootstrap_core' => '1.2.3-0.0.0',
+			'typo3' => '6.2.0-7.3.99',
+			'bootstrap_core' => '1.2.4-0.0.0',
 			// no dependency, only auto install
-			'scheduler' => '6.2.0-7.2.99',
-			'recycler' => '6.2.0-7.2.99',
+			'scheduler' => '6.2.0-7.3.99',
+			'recycler' => '6.2.0-7.3.99',
 		),
 		'conflicts' => array (
 			'bootstrap_package' => '',
