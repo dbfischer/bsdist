@@ -98,7 +98,8 @@ RTE.default {
     contentCSS = fileadmin/bsdist/theme/css/rte/content.min.css
 
     # Buttons to show
-    showButtons := addToList(fonticon)
+	showButtons := removeFromList(about)
+	#showButtons := addToList(fonticon
 
     # Toolbar order
     # --- additional for tables
@@ -108,6 +109,7 @@ RTE.default {
     #   cellinsertbefore,cellinsertafter,celldelete,cellmerge,cellsplit, bar, about,
     #   linebreak,
     # --- end
+	/*
     toolbarOrder (
         undo, redo, bar, removeformat, chMode, formatblock,
         linebreak,
@@ -116,6 +118,7 @@ RTE.default {
         bold, italic, bar, orderedlist, unorderedlist, textstyle, link, insertcharacter, line, bar, subscript, superscript, bar, copy, cut, paste, pastetoggle, pastebehaviour, pasteastext, bar, textindicator
         ,bar ,fonticon
     )
+	*/
 
     RTEHeightOverride = 500
     RTEWidthOverride = 700
