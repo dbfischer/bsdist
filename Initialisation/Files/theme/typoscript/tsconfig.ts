@@ -99,26 +99,7 @@ RTE.default {
 
     # Buttons to show
 	showButtons := removeFromList(about)
-	#showButtons := addToList(fonticon
-
-    # Toolbar order
-    # --- additional for tables
-    # table, toggleborders, bar, tableproperties, rowproperties, cellproperties, bar,
-    #   rowinsertabove,rowinsertunder,rowdelete,rowsplit,bar,
-    #   columninsertbefore,columninsertafter,columndelete,columnsplit,bar,
-    #   cellinsertbefore,cellinsertafter,celldelete,cellmerge,cellsplit, bar, about,
-    #   linebreak,
-    # --- end
-	/*
-    toolbarOrder (
-        undo, redo, bar, removeformat, chMode, formatblock,
-        linebreak,
-        blockstylelabel, blockstyle,
-        linebreak,
-        bold, italic, bar, orderedlist, unorderedlist, textstyle, link, insertcharacter, line, bar, subscript, superscript, bar, copy, cut, paste, pastetoggle, pastebehaviour, pasteastext, bar, textindicator
-        ,bar ,fonticon
-    )
-	*/
+	#showButtons := addToList(fonticon)
 
     RTEHeightOverride = 500
     RTEWidthOverride = 700
