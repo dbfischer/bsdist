@@ -6,13 +6,13 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Bootstrap Kickstart Package',
-	'description' => 'This distribution package imports an initial page tree for a new website and installs bootstrap_core. A collection of files for the website layout and extension configuration is included.',
+	'description' => 'An initial page tree will be imported and bootstrap_core will be installed. A collection of files for the website layout and extension configuration is included.',
 	'category' => 'distribution',
 	'author' => 'Pascal Mayer',
 	'author_email' => 'typo3@bsdist.ch',
 	'author_company' => '',
 	'shy' => '',
-	'version' => '1.2.4',
+	'version' => '1.2.5-dev',
 	'priority' => '',
 	'module' => '',
 	'state' => 'beta',
