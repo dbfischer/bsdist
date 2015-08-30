@@ -1,0 +1,34 @@
+{
+  "name": "typo3-bsdist",
+  "version": "1.2.5",
+  "description": "TYPO3 distribution based on bootstrap framework",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-uglify": "~0.9.1",
+    "grunt-contrib-less": "~1.0.1",
+    "grunt-contrib-cssmin": "~0.12.3",
+    "load-grunt-tasks": "~3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laxap/bsdist"
+  },
+  "keywords": [
+    "TYPO3",
+    "bsdist",
+    "bootstrap",
+    "distribution"
+  ],
+  "author": "Pascal Mayer <typo3@bsdist.ch>",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/laxap/bsdist/issues"
+  },
+  "homepage": "https://github.com/laxap/bsdist"
+}
