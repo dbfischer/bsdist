@@ -1,8 +1,9 @@
 {
-  "name": "typo3-bsdist",
+  "name": "laxap-bsdist",
   "version": "1.2.5",
   "homepage": "https://forge.typo3.org/projects/extension-bsdist/",
   "description": "TYPO3 extension bsdist",
+  "private": true,
   "authors": [
     "Pascal Mayer <typo3@bsdist.ch>"
   ],
@@ -13,17 +14,18 @@
     "distribution",
     "bootstrap"
   ],
-  "license": "GPL-3.0+",
+  "license": ["GPL-2.0"],
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "Gruntfile.js",
+    "composer.json",
+    "package.json"
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "font-awesome": "fontawesome#~4.4.0",
     "html5shiv": "~3.7.2",
     "jquery-prettyPhoto": "*"
   }
