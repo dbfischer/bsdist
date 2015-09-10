@@ -37,24 +37,21 @@ page {
 
     includeCSS {
         # In bootstrap_core set
-        #bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
-        bootstrap.forceOnTop = 1
-		# Webfont
-        /*
-        webfont = //fonts.googleapis.com/css?family=Open+Sans:400,600
-        webfont.excludeFromConcatenation = 1
-        webfont.external = 1
-        webfont.forceOnTop = 1
-        */
-        # Site & theme specific
-        custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/custom.min.css
+		bootstrap >
+		#bootstrap_core
+		lightbox >
+		# Site & theme specific
+		all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
     }
-
-    #includeJSlibs {
-	#}
+	includeJSlibs {
+		jquery = {$plugin.tx_bootstrapcore.theme.baseDir}/js/jquery.min.js
+	}
     includeJSFooterlibs {
+		# In bootstrap_core set
+		bootstrap >
+		lightbox >
         # Site & theme specific
-        custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/custom.js
+		footer = {$plugin.tx_bootstrapcore.theme.baseDir}/js/footer.min.js
     }
 
 }

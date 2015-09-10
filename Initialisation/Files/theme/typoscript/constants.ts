@@ -60,9 +60,9 @@ styles.content {
 plugin.tx_bootstrapcore {
     theme {
         #libDir = fileadmin/bsdist/lib
-        bootstrapCssFile = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/dist/css/bootstrap.min.css
-        bootstrapJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/dist/js/bootstrap.min.js
-        jQueryJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/dist/jquery.min.js
+        bootstrapCssFile = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/css/bootstrap.min.css
+        bootstrapJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/bootstrap/js/bootstrap.min.js
+        jQueryJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/jquery/jquery.min.js
 
         lightboxCssFile = {$plugin.tx_bootstrapcore.theme.libDir}/jquery-prettyPhoto/css/prettyPhoto.min.css
         lightboxJsFile = {$plugin.tx_bootstrapcore.theme.libDir}/jquery-prettyPhoto/js/jquery.prettyPhoto.js
