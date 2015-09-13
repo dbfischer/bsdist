@@ -2,107 +2,147 @@
  * Configuration
  */
 config {
-    #htmlTag_setParams = lang="en" dir="ltr"
-    pageTitleFirst = 1
+	#htmlTag_setParams = lang="en" dir="ltr"
+	pageTitleFirst = 1
+
+	absRefPrefix = /
+	prefixLocalAnchors = all
 }
 
 
 /* --------------------
  * Page
-*/
+ */
+page = PAGE
 page {
-    #bodyTag = <body class="fixed">
-    10 = FLUIDTEMPLATE
-    10 {
-        file.cObject = CASE
-        file.cObject {
-            # home template
-            2 = TEXT
-            2.value       = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_home.html
-            # empty template
-            3 = TEXT
-            3.value       = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_empty.html
-        }
+	typeNum = 0
+	10 = FLUIDTEMPLATE
+	10 {
+		layoutRootPath = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/Layouts/
+		partialRootPath = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/Partials/
 
-        variables {
-            content_sidebar < styles.content.get
-            content_sidebar.select.where = colPos=1
-        }
-    }
+		file.cObject = CASE
+		file.cObject {
+			key.data = levelfield:-1, backend_layout_next_level, slide
+			key.override.field = backend_layout
+			default = TEXT
+			default.value = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_default.html
+			2 = TEXT
+			2.value       = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_home.html
+			3 = TEXT
+			3.value       = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_empty.html
+		}
 
-    meta {
-        author   =
-        robots   = noindex,nofollow
-    }
-
-    includeCSS {
-        # In bootstrap_core set
-		bootstrap >
-		#bootstrap_core
-		lightbox >
-		# Site & theme specific
-		all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
-    }
-	includeJSlibs {
-		jquery = {$plugin.tx_bootstrapcore.theme.baseDir}/js/jquery.min.js
+		variables {
+			content < styles.content.get
+			content_sidebar < styles.content.get
+			content_sidebar.select.where = colPos=1
+		}
 	}
-    includeJSFooterlibs {
-		# In bootstrap_core set
+
+	meta {
+		author   =
+		robots   = noindex,nofollow
+	}
+
+	includeCSS {
+		# default setting with ext:bootstrap_core
+		#bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
+		#bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
+		#lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
+
+		# alt: for Grunt merged single css
+		bootstrap >
+		bootstrap_core >
+		lightbox >
+		all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
+	}
+	includeJSlibs {
+		jquery = {$plugin.tx_bootstrapcore.theme.jQueryJsFile}
+	}
+	includeJSFooterlibs {
+		# default setting with ext:bootstrap_core
+		#bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
+		#lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
+
+		# alt: for Grunt merged single js loaded on bottom of page
 		bootstrap >
 		lightbox >
-        # Site & theme specific
 		footer = {$plugin.tx_bootstrapcore.theme.baseDir}/js/footer.min.js
-    }
+	}
 
 }
 
 
-
 /* --------------------
- * tt_content customizations
- */
+* tt_content customizations
+*/
 tt_content {
 
-    /* --------------------
-     * Image max size (based on backend_layout)
-     */
-    image.20 {
-        maxW >
-        maxW.cObject = CASE
-        maxW.cObject {
-            key.data = levelfield:-1, backend_layout_next_level, slide
-            key.override.data = TSFE:page|backend_layout
+	image.20 {
 
-            # default template, home, fullwidth
-            default = TEXT
-            default.value = {$styles.content.imgtext.maxW}
+		# Settings for responsive images rendering-type
+		# Activated in constants, see styles.content.imgtext.layoutKey = srcset
+		1 {
+			# width and height added
+			layout.srcset.element = <img src="###SRC###" srcset="###SOURCECOLLECTION###" width="###WIDTH###" height="###HEIGHT###"###PARAMS######ALTPARAMS######SELFCLOSINGTAGSLASH###>
+			# sources settings, for layoutKey = srcset
+			sourceCollection {
+				small {
+					width = 200
+					srcsetCandidate = 600w
+				}
+				# image size = with * pixelDensity
+				smallRetina {
+					width = 375
+					pixelDensity = 2
+					srcsetCandidate = 600w 2x
+				}
+				big {
+					width = 1140
+					srcsetCandidate = 1200w
+				}
+			}
+		}
 
-            # template with sidebar: value based on colPos
-            1 = CASE
-            1 {
-                key.field = colPos
-                # col-md-8 (and fullwidth = 1140)
-                default = TEXT
-                default.value = 750
-                # col-md-4 (and fullwidth = 1140)
-                1 = TEXT
-                1.value = 360
-            }
+		# Image max size based on backend_layout
+		/*
+		maxW >
+		maxW.cObject = CASE
+		maxW.cObject {
+		key.data = levelfield:-1, backend_layout_next_level, slide
+		key.override.data = TSFE:page|backend_layout
 
-        }
-    }
+		# default template, home, fullwidth
+		default = TEXT
+		default.value = {$styles.content.imgtext.maxW}
 
-    /* --------------------
-     * Use header fields in gridelements (remove if not used)
-     */
-    gridelements_pi1 {
-        10 =< lib.stdheader
-    }
+		# template with sidebar
+		1 = CASE
+		1 {
+		key.field = colPos
+		# main col
+		default = TEXT
+		default.value = 750
+		#default.value = 1500
+
+		# sidebar
+		1 = TEXT
+		1.value = 360
+		#1.value = 720
+		}
+
+		}
+		*/
+	}
+
+	# Use header fields in gridelements
+	#gridelements_pi1.10 =< lib.stdheader
 }
 
 /* --------------------
- * Layout blocks, libs
- */
+* Layout blocks, libs
+*/
 lib {
 	logo = COA
 	logo.wrap = <div class="logo">|</div>
@@ -112,25 +152,25 @@ lib {
 		10.typolink.parameter = 1
 	}
 
-    footerContent = COA
+	footerContent = COA
 	footerContent.wrap = <div class="container"><div class="row">|</div></div>
 	footerContent {
-	    # left footer col
-        10 < styles.content.get
-        10 {
-            select.pidInList = {$plugin.tx_bootstrapcore.website.footer.pageId}
-            #slide = -1
-            select.where = colPos={$plugin.tx_bootstrapcore.website.footer.leftColPos}
-            stdWrap.wrap = <div class="col-md-4 col-sm-4">|</div>
-        }
-        # center
-        20 < .10
-        20.select.where = colPos={$plugin.tx_bootstrapcore.website.footer.centerColPos}
-        20.stdWrap.wrap = <div class="col-md-4 col-sm-4 text-center">|</div>
-        # right
-        30 < .10
-        30.select.where = colPos={$plugin.tx_bootstrapcore.website.footer.rightColPos}
-        30.stdWrap.wrap = <div class="col-md-4 col-sm-4 text-right">|</div>
+		# left footer col
+		10 < styles.content.get
+		10 {
+			select.pidInList = {$plugin.tx_bootstrapcore.website.footer.pageId}
+			#slide = -1
+			select.where = colPos={$plugin.tx_bootstrapcore.website.footer.leftColPos}
+			stdWrap.wrap = <div class="col-md-4 col-sm-4">|</div>
+		}
+		# center
+		20 < .10
+		20.select.where = colPos={$plugin.tx_bootstrapcore.website.footer.centerColPos}
+		20.stdWrap.wrap = <div class="col-md-4 col-sm-4 text-center">|</div>
+		# right
+		30 < .10
+		30.select.where = colPos={$plugin.tx_bootstrapcore.website.footer.rightColPos}
+		30.stdWrap.wrap = <div class="col-md-4 col-sm-4 text-right">|</div>
 	}
 
 	copyright = COA
@@ -177,21 +217,21 @@ lib {
 /*
 # On home
 [globalVar = TSFE:id = 1]
-  # change site/page title order
-  config.pageTitleFirst = 0
+# change site/page title order
+config.pageTitleFirst = 0
 [global]
 */
 
 
 /* --------------------
- * More configurations
- */
+* Additional configurations
+*/
 <INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/nav/setup.ts">
 #<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/lang/multilang.ts">
 #<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/lang/langnav.ts">
 
 
-# --- Additional extension setups (see constants.ts) ---
+# --- Extension setups (see constants.ts) ---
 #
 #<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/indexed_search/setup.ts">
 #<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/bsdist/theme/typoscript/ext/felogin/setup.ts">
