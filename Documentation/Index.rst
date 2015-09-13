@@ -3,7 +3,6 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. Includes roles, substitutions, ...
 .. include:: Includes.txt
 .. include:: Images.txt
 
@@ -11,10 +10,13 @@
 bsdist - Bootstrap Kickstart Package
 ====================================
 
-:Keywords: forDevelopers, forAdmins, forEditors
+:Extension Key: bsdist
 :Author: |author|
 :Language: en
-:Creation: 2014-08-17
+:Website: http://bsdist.ch
+:Demo: http://demo.bsdist.ch
+:Keywords: forDevelopers, forAdmins, forEditors
+:Creation: 2015-09-13
 :Rendered: |today|
 
 
@@ -22,6 +24,6 @@ bsdist - Bootstrap Kickstart Package
 
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 3
 
    Main/Index

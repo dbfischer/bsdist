@@ -4,19 +4,14 @@
 .. -*- coding: utf-8 -*- with BOM.
 
 .. include:: ../../Includes.txt
-.. include:: Images.txt
-
-
-What does it do?
-================
-
-See http://bsdist.ch for a basic overview.
+.. _Quick Installation: https://docs.typo3.org/typo3cms/InstallationGuide/QuickInstall/Index.html
 
 
 Installation
 ============
 
-Setup an empty TYPO3 instance.
+Setup a new **empty** TYPO3 instance.
+See `Quick Installation`_ on typo3.org for more information.
 
 - Go to the extension manager
 
@@ -24,10 +19,6 @@ Setup an empty TYPO3 instance.
 
 - Install the distribution **Boostrap Kickstart Package**
 
-|img-screenshot|
+.. figure:: ../Images/install-distri.png
+   :align: left
 
-
-Updating the extension (not!)
-=============================
-
-**Never tried it. I would not reoommend it.** It might overwrite files ... and create a mess?

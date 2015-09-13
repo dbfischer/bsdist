@@ -9,9 +9,10 @@
 bsdist - Bootstrap Kickstart Package
 ====================================
 
-Extension Key: bsdist
-
+:Extension Key: bsdist
 :Language: en
+:Website: http://bsdist.ch
+:Demo: http://demo.bsdist.ch
 :Keywords: forDevelopers, forAdmins, forEditors
 
 Copyright 2013-2014, Pascal Mayer <typo3@simple.ch>
@@ -28,6 +29,11 @@ The content of this document is related to TYPO3
 
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 3
 
+   Introduction/Index
    Installation/Index
+   Bootstrapcore/Index
+   Bsdist/Index
+   Extensions/Index
+   Build/Index
