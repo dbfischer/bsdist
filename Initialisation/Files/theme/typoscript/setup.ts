@@ -198,57 +198,38 @@ lib {
 /* --------------------
 * Conditional stuff
 */
-# Staging settings
-[applicationContext = Staging*]
-	/*
-	config {
-		concatenateCss = 1
-		concatenateJs = 1
-	}
-	*/
+# Production (Live and Staging)
+#
+# Set the context in the VirtualHost, e.g.
+#SetEnv TYPO3_CONTEXT Development
+# or
+#SetEnv TYPO3_CONTEXT Production/Live
+
+[applicationContext = Production*]
 	page {
 		includeCSS {
 			# for Grunt merged single css
 			bootstrap >
 			bootstrap_core >
 			lightbox >
-			custom >
-			all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
+
+			custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
 		}
 		includeJSFooterlibs {
 			# for Grunt merged single js loaded on bottom of page
 			bootstrap >
 			lightbox >
-			custom >
-			scripts = {$plugin.tx_bootstrapcore.theme.baseDir}/js/scripts.min.js
+
+			custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/scripts.min.js
 		}
 	}
 [global]
 
-# Production settings
-[applicationContext = Production*]
-	/*
-	config {
-		concatenateCss = 1
-		concatenateJs = 1
-	}
-	*/
+# Only on live site
+[applicationContext = Production/Live]
 	page {
 		meta {
 			robots   = index,follow
-		}
-		includeCSS {
-			# for Grunt merged single css
-			bootstrap >
-			bootstrap_core >
-			lightbox >
-			all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
-		}
-		includeJSFooterlibs {
-			# for Grunt merged single js loaded on bottom of page
-			bootstrap >
-			lightbox >
-			scripts = {$plugin.tx_bootstrapcore.theme.baseDir}/js/scripts.min.js
 		}
 	}
 [global]
