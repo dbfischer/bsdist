@@ -46,29 +46,26 @@ page {
 	}
 
 	includeCSS {
-		# default setting with ext:bootstrap_core
-		#bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
-		#bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
-		#lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
-
-		# alt: for Grunt merged single css
-		bootstrap >
-		bootstrap_core >
-		lightbox >
-		all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
+		# development setting: default setting with ext:bootstrap_core
+		# see condition applicationContext for production settings
+		bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
+		bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
+		lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
+		# css/styles.css (created by grunt scss task if scss/styles.scss is used)
+		custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/styles.css
 	}
 	includeJSlibs {
 		jquery = {$plugin.tx_bootstrapcore.theme.jQueryJsFile}
 	}
 	includeJSFooterlibs {
-		# default setting with ext:bootstrap_core
-		#bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
-		#lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
-
-		# alt: for Grunt merged single js loaded on bottom of page
-		bootstrap >
-		lightbox >
-		footer = {$plugin.tx_bootstrapcore.theme.baseDir}/js/footer.min.js
+		# development setting: default setting with ext:bootstrap_core
+		# see condition applicationContext for production settings
+		bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
+		lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
+		# js/includes/custom.js
+		custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/includes/custom.js
+		# or _includes.js (created by grunt concat task)
+		#custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/_includes.js
 	}
 
 }
@@ -201,15 +198,57 @@ lib {
 /* --------------------
 * Conditional stuff
 */
-# Production settings
-[applicationContext = Production*]
+# Staging settings
+[applicationContext = Staging*]
+	/*
 	config {
 		concatenateCss = 1
 		concatenateJs = 1
 	}
+	*/
+	page {
+		includeCSS {
+			# for Grunt merged single css
+			bootstrap >
+			bootstrap_core >
+			lightbox >
+			custom >
+			all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
+		}
+		includeJSFooterlibs {
+			# for Grunt merged single js loaded on bottom of page
+			bootstrap >
+			lightbox >
+			custom >
+			scripts = {$plugin.tx_bootstrapcore.theme.baseDir}/js/scripts.min.js
+		}
+	}
+[global]
+
+# Production settings
+[applicationContext = Production*]
+	/*
+	config {
+		concatenateCss = 1
+		concatenateJs = 1
+	}
+	*/
 	page {
 		meta {
 			robots   = index,follow
+		}
+		includeCSS {
+			# for Grunt merged single css
+			bootstrap >
+			bootstrap_core >
+			lightbox >
+			all = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
+		}
+		includeJSFooterlibs {
+			# for Grunt merged single js loaded on bottom of page
+			bootstrap >
+			lightbox >
+			scripts = {$plugin.tx_bootstrapcore.theme.baseDir}/js/scripts.min.js
 		}
 	}
 [global]
