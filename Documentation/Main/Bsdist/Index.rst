@@ -6,10 +6,10 @@
 .. include:: ../../Includes.txt
 
 
-Start developing
-================
+For website development
+=======================
 
-The path to the assets installed with the bsdist distribution is /fileadmin/bsdist/.
+The assets installed with the bsdist distribution were copied to /fileadmin/bsdist/.
 
 The lib directory
 -----------------
@@ -41,7 +41,7 @@ The bsdist package redefines (for readability) and changes some of these objects
 .. figure:: ../Images/bsdist-typoscript.png
    :align: left
 
-In the file setup.ts the main page object is redefined. The template part is extended to support a second template with a sidebar column and an empty template.
+In the file setup.ts the main page object is redefined. The template file part is extended to provide a third template with a sidebar column and an empty template.
 
 .. code-block:: typoscript
 

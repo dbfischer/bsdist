@@ -8,14 +8,14 @@
 
 Features provided by extension bootstrap_core
 =============================================
-The extension bootstrap_core adds bootstrap-realted features to content elements and modifies the rendering of specific content types.
+The extension bootstrap_core adds bootstrap-related features to content elements and modifies the rendering of specific content types (text/images, menu, mailform...).
 
 
 Constants
 ---------
 A few constants are used to define the paths and urls to assets and for main website settings.
 
-- paths to the directories with the libraries and the theme files
+- paths to the directories with the libraries and the website theme files
 
 - urls (or paths if changed to local files) to bootstrap, jquery and other resources
 
@@ -26,7 +26,7 @@ The default configuration of ext:bsdist overwrites some of these settings, e.g. 
 .. figure:: ../Images/bootstrapcore_constants.png
    :align: left
 
-All constants defined by bootstrap_core. The paths for the baseDir and the libDir match the directory structure of the bsdist distribution assets.
+All constants defined by bootstrap_core. The paths for the *baseDir* and the *libDir* match the directory structure of the bsdist distribution assets.
 
 .. code-block:: typoscript
 
@@ -78,8 +78,8 @@ Config object properties set by the extension bootstrap_core.
 
 Basic page setup
 ----------------
-A basic page setup based on FLUIDTEMPLATE and prepared to be extended for additional page templates is already provided by the core extension.
-The paths for the templates match the directory structure of the bsdist extension theme assets.
+A basic page setup based on FLUIDTEMPLATE, ready for additional page templates, is defined in the bootstrap_core extension.
+The paths to the html templates match the directory structure of the bsdist extension file package which was copied to fileadmin/bsdist during the installation.
 
 .. code-block:: typoscript
 
@@ -104,8 +104,8 @@ The paths for the templates match the directory structure of the bsdist extensio
 	}
 
 
-Loading jQuery and bootstrap
-----------------------------
+jQuery and bootstrap
+--------------------
 The main assets for bootstrap, jQuery and the lightbox library prettyPhoto are set. The paths or urls are defined as constants (see above).
 
 .. code-block:: typoscript
