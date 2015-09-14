@@ -16,6 +16,13 @@ module.exports = function(grunt) {
         copy: {
             toLib: {
                 files: [
+                    /* jquery */
+                    {
+                        expand: true,
+                        src: ['<%= paths.bower %>/jquery/dist/jquery.min.*'],
+                        dest: '<%= paths.lib %>/jquery/',
+                        flatten: true
+                    },
                     /* bootstrap */
                     {
                         expand: true,
@@ -25,9 +32,13 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        cwd: '<%= paths.bower %>/bootstrap-sass-official/assets/stylesheets/',
+                        cwd: '<%= paths.bower %>/bootstrap-sass-official/assets/stylesheets/bootstrap',
                         src: ['**'],
-                        dest: '<%= paths.lib %>/bootstrap/scss/'
+                        dest: '<%= paths.lib %>/bootstrap/scss/bootstrap'
+                    },
+                    {
+                        src: '<%= paths.bower %>/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss',
+                        dest: '<%= paths.lib %>/bootstrap/scss/bootstrap.scss'
                     },
                     {
                         expand: true,
@@ -65,13 +76,6 @@ module.exports = function(grunt) {
             },
             toTheme: {
                 files: [
-                    /* jquery */
-                    {
-                        expand: true,
-                        src: ['<%= paths.bower %>/jquery/dist/jquery.min.js'],
-                        dest: '<%= paths.theme %>/js/',
-                        flatten: true
-                    },
                     /* bootstrap fonts */
                     {
                         expand: true,
@@ -114,22 +118,13 @@ module.exports = function(grunt) {
 
         sass: {
             options: {
-                bundleExec: false,
-                debugInfo: false,
-                lineNumbers: false,
                 style: 'compact',
                 unixNewlines: true
             },
             lib: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= paths.lib %>/bootstrap/scss/',
-                        src: ['bootstrap.scss'],
-                        dest: '<%= paths.lib %>/bootstrap/css/',
-                        ext: '.css'
-                    }
-                ]
+                files: {
+                    '<%= paths.lib %>/bootstrap/css/bootstrap.css': '<%= paths.lib %>/bootstrap/scss/bootstrap.scss'
+                }
             },
             theme: {
                 files: [
@@ -192,17 +187,14 @@ module.exports = function(grunt) {
                 files: [
                     {
                         '<%= paths.theme %>/css/all.min.css': ['<%= paths.lib %>/bootstrap/css/bootstrap.css', '<%= paths.lib %>/jquery-prettyPhoto/css/prettyPhoto.css', 'theme/css/styles.css']
-                    },
-                    {
-                        '<%= paths.theme %>/css/rte/content.min.css': ['<%= paths.theme %>/css/rte/content.css']
                     }
                 ]
             }
         }
     });
 
+    // Default
     grunt.registerTask('default', [
-        'sass:lib',
         'sass:theme',
         'sass:rte',
         //'sass:fontawesome',
@@ -211,10 +203,16 @@ module.exports = function(grunt) {
         'cssmin'
     ]);
 
-    grunt.registerTask('init', [
-        'copy:toLib',
-        'copy:toTheme',
-        //'copy:fontawesome'
+    // Full with lib sass
+    grunt.registerTask('full', [
+        'sass:lib',
+        'default'
     ]);
+
+
+    // Only for initialization (copies files from bower_components/ to lib/)
+    //
+    grunt.registerTask('init', [ 'copy:toLib', 'copy:toTheme', 'full' ]);
+    //grunt.registerTask('init', [ 'copy:toLib', 'copy:toTheme', 'copy:fontawesome', 'full' ]);
 
 };
