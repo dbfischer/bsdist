@@ -34,14 +34,14 @@ The path to the theme directory is set in the constant plugin.tx_bootstrapcore.t
 Page setup, templates and backend layouts
 -----------------------------------------
 
-The files constants.ts, setup.ts and tsconfig.ts are the starting point to modify the default TYPO3 website setup defined by bootstrap_core and bsdist.
+The files *constants.ts*, *setup.ts* and *tsconfig.ts* are the starting point to modify the default TYPO3 website setup defined by bootstrap_core and bsdist.
 The extension bootstrap_core has already set some config properties and defined a basic page object.
 The bsdist package redefines (for readability) and changes some of these objects and properties.
 
 .. figure:: ../Images/bsdist-typoscript.png
    :align: left
 
-In the file setup.ts the main page object is redefined. The template file part is extended to provide a third template with a sidebar column and an empty template.
+In the file *theme/typoscript/setup.ts* the main page object is redefined. The template file part is extended to provide a third template with a sidebar column and an empty template.
 
 .. code-block:: typoscript
 
@@ -99,7 +99,7 @@ To add another page template
 
 - create a new html template (e.g. with 3 content columns, tmpl_3cols.html)
 - create a new backend layout record for the template
-- add typoscript code to setup.ts to link the UID of the new backend layout record (e.g. UID 4) to the new html template
+- add typoscript code to *setup.ts* to link the UID of the new backend layout record (e.g. UID 4) to the new html template
 
 .. code-block:: typoscript
 

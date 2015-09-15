@@ -16,9 +16,9 @@ Important: See the manuals of the extensions for information about how to instal
    :align: left
 
 Before including an extension setup, try to understand the provided configuration (changes) and/or templates. What was changed compared to the original setups?
-Include the configuration files of additional extension in the root files using INCLUDE_TYPOSCRIPT. See constant.ts and setup.ts.
+Include the configuration files of additional extension in the root files using INCLUDE_TYPOSCRIPT. See *constant.ts* and *setup.ts*.
 
-Example from setup.ts, at the end of the file.
+Example from *setup.ts*, at the end of the file.
 
 .. code-block:: typoscript
 

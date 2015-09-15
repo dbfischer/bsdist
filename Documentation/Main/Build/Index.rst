@@ -52,10 +52,10 @@ After sucessfully installing the node packages and bower components there are tw
    :align: left
 
 
-Update the packaged and minified css and js
--------------------------------------------
+Update merged and minified CSS and Javascript
+---------------------------------------------
 
-When css and javascript files were added or modified you may use the *default* grunt task to merge and minify the resources.
+When CSS and JavaScript files were added or modified you may use the *default* grunt task to merge and minify the resources.
 
 .. code:: bash
 

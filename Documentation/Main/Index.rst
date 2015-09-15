@@ -37,4 +37,5 @@ The content of this document is related to TYPO3
    Bsdist/Index
    Extensions/Index
    Build/Index
+   ApplicationContext/Index
    Links/Index

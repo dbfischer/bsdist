@@ -19,14 +19,14 @@ During the installation of the bsdist distribution
 
 - the extension `bootstrap_core`_ will be installed
 
-- a set of files are copied to :bash:`fileadmin/bsdist/`
+- a set of files are copied to *fileadmin/bsdist/*
 
 - and a basic resource and page tree is imported.
 
 
 Screenshots
------------
-Backend features provided by `bootstrap_core`_
+===========
+Backend features provided by extension `bootstrap_core`_.
 
 .. figure:: ../Images/bootstrapcore_features.png
    :align: left
@@ -41,7 +41,7 @@ A basic page tree is imported.
 .. figure:: ../Images/be_pagetree.png
    :align: left
 
-The homepage of the initial website.
+The homepage of the website after installation.
 
 .. figure:: ../Images/homepage.png
    :align: left

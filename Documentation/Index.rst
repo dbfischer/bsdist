@@ -16,7 +16,7 @@ bsdist - Bootstrap Kickstart Package
 :Website: http://bsdist.ch
 :Demo: http://demo.bsdist.ch
 :Keywords: forDevelopers, forAdmins, forEditors
-:Creation: 2015-09-13
+:Creation: 2015-09-15
 :Rendered: |today|
 
 
