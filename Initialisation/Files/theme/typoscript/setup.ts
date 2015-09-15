@@ -42,30 +42,26 @@ page {
 
 	meta {
 		author   =
-		robots   = noindex,nofollow
+		robots   = index,follow
 	}
 
 	includeCSS {
-		# development setting: default setting with ext:bootstrap_core
-		# see condition applicationContext for production settings
-		bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
-		bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
-		lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
-		# css/styles.css (created by grunt scss task if scss/styles.scss is used)
-		custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/styles.css
+		# see condition applicationContext for development settings
+		# Grunt merged single css (Production Context)
+		bootstrap >
+		bootstrap_core >
+		lightbox >
+		custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
 	}
 	includeJSlibs {
 		jquery = {$plugin.tx_bootstrapcore.theme.jQueryJsFile}
 	}
 	includeJSFooterlibs {
-		# development setting: default setting with ext:bootstrap_core
-		# see condition applicationContext for production settings
-		bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
-		lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
-		# js/includes/custom.js
-		custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/includes/custom.js
-		# or _includes.js (created by grunt concat task)
-		#custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/_includes.js
+		# see condition applicationContext below for development settings
+		# Grunt merged single js (Production Context)
+		bootstrap >
+		lightbox >
+		custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/scripts.min.js
 	}
 
 }
@@ -107,30 +103,31 @@ tt_content {
 		maxW >
 		maxW.cObject = CASE
 		maxW.cObject {
-		key.data = levelfield:-1, backend_layout_next_level, slide
-		key.override.data = TSFE:page|backend_layout
+			key.data = levelfield:-1, backend_layout_next_level, slide
+			key.override.data = TSFE:page|backend_layout
 
-		# default template, home, fullwidth
-		default = TEXT
-		default.value = {$styles.content.imgtext.maxW}
+			# default template, home, fullwidth
+			default = TEXT
+			default.value = {$styles.content.imgtext.maxW}
 
-		# template with sidebar
-		1 = CASE
-		1 {
-		key.field = colPos
-		# main col
-		default = TEXT
-		default.value = 750
-		#default.value = 1500
+			# template with sidebar
+			1 = CASE
+			1 {
+				key.field = colPos
+				# main col
+				default = TEXT
+				default.value = 750
+				#default.value = 1500
 
-		# sidebar
-		1 = TEXT
-		1.value = 360
-		#1.value = 720
-		}
+				# sidebar
+				1 = TEXT
+				1.value = 360
+				#1.value = 720
+			}
 
 		}
 		*/
+
 	}
 
 	# Use header fields in gridelements
@@ -198,38 +195,36 @@ lib {
 /* --------------------
 * Conditional stuff
 */
-# Production (Live and Staging)
+# Development Environment
 #
-# Set the context in the VirtualHost, e.g.
-#SetEnv TYPO3_CONTEXT Development
-# or
-#SetEnv TYPO3_CONTEXT Production/Live
-
-[applicationContext = Production*]
+[applicationContext = Development*]
 	page {
+		meta {
+			robots   = noindex,nofollow
+		}
 		includeCSS {
-			# for Grunt merged single css
-			bootstrap >
-			bootstrap_core >
-			lightbox >
-
-			custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/all.min.css
+			bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
+			bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
+			lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
+			# css/styles.css (created by grunt scss task if scss/styles.scss is used)
+			custom = {$plugin.tx_bootstrapcore.theme.baseDir}/css/styles.css
 		}
 		includeJSFooterlibs {
-			# for Grunt merged single js loaded on bottom of page
-			bootstrap >
-			lightbox >
-
-			custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/scripts.min.js
+			bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
+			lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
+			# js/includes/custom.js
+			custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/includes/custom.js
+			# or _includes.js (created by grunt concat task)
+			#custom = {$plugin.tx_bootstrapcore.theme.baseDir}/js/_includes.js
 		}
 	}
 [global]
 
-# Only on live site
-[applicationContext = Production/Live]
+# Staging
+[applicationContext = Production/Staging]
 	page {
 		meta {
-			robots   = index,follow
+			robots   = noindex,nofollow
 		}
 	}
 [global]
