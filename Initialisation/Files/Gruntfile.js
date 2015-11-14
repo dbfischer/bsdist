@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                     /* bootstrap */
                     {
                         expand: true,
-                        src: ['<%= paths.bower %>/bootstrap/dist/css/bootstrap.css'],
+                        src: ['<%= paths.bower %>/bootstrap/dist/css/bootstrap.css', '<%= paths.bower %>/bootstrap/dist/css/bootstrap.min.css'],
                         dest: '<%= paths.lib %>/bootstrap/css/',
                         flatten: true
                     },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['<%= paths.bower %>/bootstrap/dist/js/bootstrap.js'],
+                        src: ['<%= paths.bower %>/bootstrap/dist/js/bootstrap.js', '<%= paths.bower %>/bootstrap/dist/js/bootstrap.min.js'],
                         dest: '<%= paths.lib %>/bootstrap/js/',
                         flatten: true
                     },
@@ -179,7 +179,7 @@ module.exports = function(grunt) {
             },
             footerJs: {
                 src: ['<%= paths.theme %>/js/_libs.js','<%= paths.theme %>/js/_includes.js'],
-                dest: '<%= paths.theme %>/js/footer.min.js'
+                dest: '<%= paths.theme %>/js/scripts.min.js'
             }
         },
         cssmin: {
@@ -214,5 +214,4 @@ module.exports = function(grunt) {
     //
     grunt.registerTask('init', [ 'copy:toLib', 'copy:toTheme', 'full' ]);
     //grunt.registerTask('init', [ 'copy:toLib', 'copy:toTheme', 'copy:fontawesome', 'full' ]);
-
 };
