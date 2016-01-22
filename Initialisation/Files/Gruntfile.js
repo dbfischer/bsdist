@@ -10,7 +10,8 @@ module.exports = function(grunt) {
         paths: {
             bower: 'bower_components',
             lib: 'lib',
-            theme: 'theme'
+            theme: 'theme',
+            bootstrap_core: '../../typo3conf/ext/bootstrap_core'
         },
 
         copy: {
@@ -186,7 +187,10 @@ module.exports = function(grunt) {
             theme: {
                 files: [
                     {
-                        '<%= paths.theme %>/css/all.min.css': ['<%= paths.lib %>/bootstrap/css/bootstrap.css', '<%= paths.lib %>/jquery-prettyPhoto/css/prettyPhoto.css', 'theme/css/styles.css']
+                        '<%= paths.theme %>/css/all.min.css': ['<%= paths.lib %>/bootstrap/css/bootstrap.css',
+                                                               '<%= paths.bootstrap_core %>/Resources/Public/Css/content.min.css',
+                                                               '<%= paths.lib %>/jquery-prettyPhoto/css/prettyPhoto.css',
+                                                               'theme/css/styles.css']
                     }
                 ]
             }
