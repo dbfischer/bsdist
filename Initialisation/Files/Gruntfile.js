@@ -188,7 +188,7 @@ module.exports = function(grunt) {
                 files: [
                     {
                         '<%= paths.theme %>/css/all.min.css': ['<%= paths.lib %>/bootstrap/css/bootstrap.css',
-                                                               '<%= paths.bootstrap_core %>/Resources/Public/Css/content.min.css',
+                                                               '<%= paths.bootstrap_core %>/Resources/Public/Css/content.css',
                                                                '<%= paths.lib %>/jquery-prettyPhoto/css/prettyPhoto.css',
                                                                'theme/css/styles.css']
                     }
