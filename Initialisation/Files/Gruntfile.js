@@ -81,7 +81,7 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         src: ['<%= paths.lib %>/bootstrap/fonts/*'],
-                        dest: '<%= paths.theme %>/fonts/',
+                        dest: '<%= paths.theme %>/fonts/bootstrap/',
                         flatten: true
                     },
                     /* prettyPhoto images */
