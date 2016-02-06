@@ -1,13 +1,13 @@
 ( function($) {
     $(document).ready(function() {
 
-        /* ------------------------------------------
-         * prettyPhoto
-         * ------------------------------------------ */
-        /* Add prettyPhoto rel attrib to links with class 'lightbox' */
+        // ------------------------------------------
+        // prettyPhoto
+        //
+        // Add prettyPhoto rel attrib to links with class 'lightbox'
         $('a[class=lightbox]').attr('rel', 'prettyPhoto');
 
-        /* Activate prettyPhoto lightbox/slideshow */
+        // Activate prettyPhoto lightbox/slideshow
         $("a[rel^='prettyPhoto']").prettyPhoto({
             animation_speed: 'fast',   /* fast/slow/normal */
             slideshow: 5000,           /* false OR interval in ms */
@@ -24,6 +24,9 @@
             overlay_gallery: false, /* A gallery will overlay the fullscreen image on mouse over */
             social_tools: false
         });
+
+        // Bootstrap popover (opt-in)
+        //$('[data-toggle="popover"]').popover()
 
     });
 } ) ( jQuery );
