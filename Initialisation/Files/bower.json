@@ -5,10 +5,10 @@
   "authors": [ "Firstname Lastname <example@example.com>" ],
   "private": true,
   "dependencies": {
-    "jquery": "2.1.4",
-    "bootstrap": "3.3.5",
-    "bootstrap-sass-official": "3.3.5",
-    "jquery-prettyPhoto": "*"
+    "jquery": "~2.2.3",
+    "bootstrap": "~3.3.6",
+    "bootstrap-sass-official": "~3.3.6",
+    "jquery-prettyPhoto": "~3.1.6"
   },
   "ignore": [
     "**/.*",
