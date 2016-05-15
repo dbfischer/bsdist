@@ -175,9 +175,9 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
+            //options: {
+            //    banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            //},
             footerJs: {
                 src: ['<%= paths.theme %>/js/_libs.js','<%= paths.theme %>/js/_includes.js'],
                 dest: '<%= paths.theme %>/js/scripts.min.js'
