@@ -6,14 +6,14 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Bootstrap Kickstart Package',
-	'description' => 'An initial page tree will be imported and bootstrap_core will be installed. A collection of files for the website layout and extension configuration is included.',
+	'description' => 'Starter package to create a new website with the bootstrap framework. Imports a basic page tree and includes a collection of files (html, scss, js, typoscript, bower.json, package.json...) to start developing.',
 	'category' => 'distribution',
 	'author' => 'Pascal Mayer',
 	'author_email' => 'typo3@bsdist.ch',
 	'author_company' => '',
-	'state' => 'stable',
+	'state' => 'beta',
 	'shy' => '',
-	'version' => '1.3.3',
+	'version' => '2.0.0-dev',
 	'priority' => '',
 	'module' => '',
 	'internal' => '',
@@ -24,16 +24,18 @@ $EM_CONF[$_EXTKEY] = array (
 	'lockType' => '',
 	'constraints' => array (
 		'depends' => array (
-			'typo3' => '6.2.0-7.6.99',
-			'bootstrap_core' => '1.2.8-0.0.0',
-			'scheduler' => '6.2.0-7.6.99',
-			'recycler' => '6.2.0-7.6.99',
+			'typo3' => '8.7.0-8.7.99',
+			'scheduler' => '8.7.0-8.7.99',
+			'recycler' => '8.7.0-8.7.99',
 		),
 		'conflicts' => array (
 			'bootstrap_package' => '',
 			'introduction' => '',
 		),
 	),
+    'autoload' => array(
+        'psr-4' => array('Laxap\\Bsdist\\' => 'Classes/')
+    ),
 );
 
 ?>

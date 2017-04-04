@@ -16,12 +16,12 @@ config {
 */
 plugin.tx_indexedsearch {
   # html template for form, results, rules...
-  templateFile = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/indexed_search/indexed_search.html
+  templateFile = {$plugin.tx_bsdist.theme.baseDir}/tmpl/indexed_search/indexed_search.html
 
   # search config
   search {
     # root page to search from
-    rootPidList = {$plugin.tx_bootstrapcore.indexed_search.rootPidList}
+    rootPidList = {$plugin.tx_bsdist.indexed_search.rootPidList}
     # number of page links shown
     page_links = 10
   }
