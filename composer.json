@@ -1,7 +1,7 @@
 {
   "name": "laxap/bsdist",
   "type": "typo3-cms-extension",
-  "description": "Starter package to create a new website with the bootstrap framework. Imports a basic page tree and includes a collection of files (html, scss, js, typoscript, bower.json, package.json...) to start developing.",
+  "description": "Kickstart package to create a new TYPO3 website. Delivers a simple page tree for a new website based on the bootstrap framework. Ads bootstrap layout features to some of the content elements.",
   "homepage": "http://www.bsdist.ch",
   "license": "GPL-2.0",
   "keywords": ["typo3", "TYPO3 CMS", "bootstrap", "bsdist", "distribution"],
@@ -10,7 +10,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Laxap\\Bsdist\\": "Classes/"
+      "Laxap\\Bsdist\\": "Classes"
     }
   }
 }

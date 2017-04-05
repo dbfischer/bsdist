@@ -17,8 +17,6 @@ page {
     #typeNum = 0
     10 = FLUIDTEMPLATE
     10 {
-        #format = html
-        format >
         #templateRootPaths.10 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/backend_layout
         #layoutRootPaths.10 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/backend_layout/Layouts/
         #partialRootPaths.10 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/backend_layout/Partials/

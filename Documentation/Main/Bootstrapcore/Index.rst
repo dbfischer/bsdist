@@ -137,7 +137,7 @@ The rendering of tables is modified to wrap the table with <div class="table-res
 
 Form rendering
 --------------
-The rendering of mailforms is modified to create markup supported by bootstrap.
+The default rendering of forms with ext:forms now is compatible with bootstrap.
 
 
 Menu options and rendering
