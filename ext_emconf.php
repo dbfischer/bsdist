@@ -12,7 +12,7 @@ $EM_CONF[$_EXTKEY] = [
 	'author_email' => 'typo3@bsdist.ch',
 	'author_company' => '',
 	'state' => 'beta',
-	'version' => '2.0.0',
+	'version' => '2.0.1',
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'modify_tables' => 'tt_content',
@@ -23,10 +23,11 @@ $EM_CONF[$_EXTKEY] = [
             'fluid_styled_content' => '8.7.0-8.7.99',
 			'scheduler' => '8.7.0-8.7.99', // activate on installation
 			'recycler' => '8.7.0-8.7.99',  // activate on installation
+            'realurl' => '	2.2.0-0.0.0'
         ],
 		'conflicts' => [
 			'css_styled_content' => '*',
-			'bootstrap_package' => '*',
+			'bootstrap_package' => '*'
         ],
 	],
     'autoload' => [
