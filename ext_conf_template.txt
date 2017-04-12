@@ -3,4 +3,4 @@
 enableResponsiveVisibilityField = 1
 
 # cat=basic; type=string; label=Comma separated list of content element types where the show/hide field is shown. This distribution provides a fluid_styled_content template which uses the wrap viewhelper only for the CType textmedia.
-showResponsiveVisibilityFieldInCTypes = textmedia,menu,table
+showResponsiveVisibilityFieldInCTypes = text,textpic,image,textmedia,tmenu,table
