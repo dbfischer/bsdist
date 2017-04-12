@@ -15,10 +15,12 @@ config {
  * Configuration of indexed_search
 */
 plugin.tx_indexedsearch {
-  # html template for form, results, rules...
   view {
-    templateRootPaths.100 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/indexed_search/Templates/
-    partialRootPaths.100 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/indexed_search/Partials/
+    # change to use templates from theme directory
+    templateRootPaths.100 = EXT:bsdist/Resources/Private/indexed_search/Templates/
+    #templateRootPaths.100 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/indexed_search/Templates/
+    partialRootPaths.100 = EXT:bsdist/Resources/Private/indexed_search/Partials/
+    #partialRootPaths.100 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/indexed_search/Partials/
   }
 
   settings {
