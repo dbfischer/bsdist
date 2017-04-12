@@ -1,15 +1,4 @@
 /* --------------------
- * Configuration
- */
-config {
-    #htmlTag_setParams = lang="en" dir="ltr"
-    #    pageTitleFirst = 1
-    #    absRefPrefix = /
-    #    prefixLocalAnchors = all
-}
-
-
-/* --------------------
  * Page
  */
 page = PAGE
@@ -140,6 +129,9 @@ lib {
 # Development Environment
 #
 [applicationContext = Development*]
+    config {
+        admPanel = 1
+    }
     page {
         meta {
             robots   = noindex,nofollow
@@ -147,11 +139,15 @@ lib {
         includeCSS {
             bootstrap = {$plugin.tx_bsdist.theme.bootstrapCssFile}
             lightbox = {$plugin.tx_bsdist.theme.lightboxCssFile}
+            # fix order
+            custom >
             custom = fileadmin/bsdist/theme/css/styles.css
         }
         includeJSFooterlibs {
             bootstrap = {$plugin.tx_bsdist.theme.bootstrapJsFile}
             lightbox = {$plugin.tx_bsdist.theme.lightboxJsFile}
+            # fix order
+            custom >
             custom = fileadmin/bsdist/theme/js/_includes.js
         }
     }
