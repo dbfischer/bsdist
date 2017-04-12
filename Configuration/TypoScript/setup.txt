@@ -2,20 +2,15 @@
  * Core config setup
  */
 config {
-    /*
     doctype = html5
 
     disablePrefixComment = 1
-    removeDefaultJS = external
+    # option: external
+    removeDefaultJS = 1
     inlineStyle2TempFile = 1
 
     absRefPrefix = /
-    prefixLocalAnchors = all
-    extTarget =
-
     tx_realurl_enable = 1
-
-    noScaleUp = 1
     spamProtectEmailAddresses = ascii
 
     sys_language_uid = 0
@@ -24,7 +19,6 @@ config {
     htmlTag_langKey < config.language
 
     admPanel = 0
-    */
 }
 
 
@@ -37,7 +31,6 @@ page {
 
     10 = FLUIDTEMPLATE
     10 {
-        format = html
         templateRootPaths.10 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/backend_layout
         layoutRootPaths.10 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/backend_layout/Layouts
         partialRootPaths.10 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/backend_layout/Partials
@@ -79,12 +72,6 @@ page {
 
 
 /** -----------------------------------------
- * Remove default extension styles
- */
-#plugin.tx_form._CSS_DEFAULT_STYLE >
-
-
-/** -----------------------------------------
  * RTE parsing settings
  */
 lib.parseFunc_RTE {
@@ -121,4 +108,3 @@ lib.fluidContent {
     partialRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Partials/
 
 }
-
