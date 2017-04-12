@@ -24,6 +24,8 @@
   @extend .alert-danger;
 }
 
+// --- layouts for textpic, textmedia, images ---
+//
 .img-layout-1 {
   @extend .img-responsive;
 }
@@ -47,6 +49,25 @@
 .img-layout-7 {
   @extend .img-responsive;
   @extend .img-thumbnail;
+}
+
+.ce-gallery {
+  .ce-row {
+    @include make-row;
+    @media screen and (max-width: $screen-sm-max) {
+      figure.image {
+        margin-bottom: 30px;
+      }
+      .col-sm-12 figure.image,
+      .col-sm-6:last-child figure.image,
+      .col-sm-4:last-child figure.image,
+      .col-sm-3:last-child figure.image,
+      .col-sm-2:last-child figure.image,
+      .col-sm-1:last-child figure.image {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 // --- tables ---
@@ -88,8 +109,9 @@
 // --- menus ---
 //
 .ce-menu {
-  // menu types
-  &.ce-menu-1 {
+  // menu type: pages and subpages
+  &.ce-menu-p,
+  &.ce-menu-sp {
   }
 
   // layout 1 - x
