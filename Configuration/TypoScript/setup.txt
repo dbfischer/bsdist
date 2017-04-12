@@ -97,14 +97,13 @@ lib.parseFunc_RTE {
 */
 lib.contentElement {
     # additional template paths
-    templateRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Templates/
-    layoutRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Layouts/
-    partialRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Partials/
+    templateRootPaths.20 = EXT:bsdist/Resources/Private/fluid_styled_content/Templates/
+    layoutRootPaths.20 = EXT:bsdist/Resources/Private/fluid_styled_content/Layouts/
+    partialRootPaths.20 = EXT:bsdist/Resources/Private/fluid_styled_content/Partials/
 }
 lib.fluidContent {
     # additional template paths
-    templateRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Templates/
-    layoutRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Layouts/
-    partialRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Partials/
-
+    templateRootPaths.20 = EXT:bsdist/Resources/Private/fluid_styled_content/Templates/
+    layoutRootPaths.20 = EXT:bsdist/Resources/Private/fluid_styled_content/Layouts/
+    partialRootPaths.20 = EXT:bsdist/Resources/Private/fluid_styled_content/Partials/
 }
