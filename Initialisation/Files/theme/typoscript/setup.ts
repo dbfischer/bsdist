@@ -60,6 +60,11 @@ page {
 lib {
     # fluid content
     fluidContent {
+        # use templates in theme directory
+        #templateRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Templates/
+        #layoutRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Layouts/
+        #partialRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Partials/
+
         settings {
             media {
                 popup {
@@ -67,6 +72,13 @@ lib {
                 }
             }
         }
+    }
+
+    contentElement {
+        # use templates in theme directory
+        #templateRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Templates/
+        #layoutRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Layouts/
+        #partialRootPaths.20 = {$plugin.tx_bsdist.theme.baseDir}/tmpl/fluid_styled_content/Partials/
     }
 
     logo = COA
