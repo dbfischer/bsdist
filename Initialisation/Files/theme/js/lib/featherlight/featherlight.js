@@ -1,6 +1,6 @@
 /**
  * Featherlight - ultra slim jQuery lightbox
- * Version 1.7.1 - http://noelboss.github.io/featherlight/
+ * Version 1.7.2 - http://noelboss.github.io/featherlight/
  *
  * Copyright 2017, Noël Raoul Bossart (http://www.noelboss.com)
  * MIT Licensed.
@@ -493,7 +493,9 @@
 				} else if(fl.persist !== false) {
 					$(this).data('featherlight-persisted', fl);
 				}
-				elemConfig.$currentTarget.blur(); // Otherwise 'enter' key might trigger the dialog again
+				if (elemConfig.$currentTarget.blur) {
+					elemConfig.$currentTarget.blur(); // Otherwise 'enter' key might trigger the dialog again
+				}
 				fl.open(event);
 			};
 
@@ -573,7 +575,9 @@
 
 				this._$previouslyWithTabIndex.add(this._$previouslyTabbable).attr('tabindex', -1);
 
-				document.activeElement.blur();
+				if (document.activeElement.blur) {
+					document.activeElement.blur();
+				}
 				return _super(event);
 			},
 
