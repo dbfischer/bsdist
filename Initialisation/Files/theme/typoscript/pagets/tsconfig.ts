@@ -42,6 +42,16 @@ TCEFORM.pages {
     */
 }
 
+TCEFORM.tt_content {
+    # support only bootstrap 12er grid cols
+    imagecols {
+        removeItems = 5,7,8
+        addItems {
+            12 = 12
+        }
+    }
+}
+
 # --- RTE ---
 #
 RTE.classes {
