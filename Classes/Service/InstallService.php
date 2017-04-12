@@ -66,9 +66,12 @@ class InstallService {
             $this->addMessage(FlashMessage::NOTICE, '.htaccess not created', ' File .htaccess exists already in the root directory.');
 			return;
 		}
-		$htAccessContent = GeneralUtility::getUrl(PATH_site .'typo3_src/_.htaccess');
-		GeneralUtility::writeFile($htAccessFile, $htAccessContent, TRUE);
-        $this->addMessage(FlashMessage::OK,  '.htaccess file created', 'File .htaccess was created in the root directory.');
+		$htAccessContent = GeneralUtility::getUrl(PATH_typo3 .'../_.htaccess');
+		if ( trim($htAccessContent) ) {
+            if ( GeneralUtility::writeFile($htAccessFile, $htAccessContent, TRUE) ) {
+                $this->addMessage(FlashMessage::OK,  '.htaccess file created', 'File .htaccess was created in the root directory.');
+            }
+        }
 	}
 
 
