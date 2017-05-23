@@ -15,3 +15,6 @@ if (TYPO3_MODE === 'BE') {
         'generateConfigFiles'
     );
 }
+
+# custom ckeditor
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['custom'] = 'fileadmin/bsdist/theme/typoscript/pagets/custom.yaml';
