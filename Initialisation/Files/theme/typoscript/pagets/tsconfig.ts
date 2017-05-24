@@ -57,9 +57,10 @@ TCEFORM.tt_content {
 RTE.default.preset = minimal
 # minimal, default, full
 RTE.config.tt_content.bodytext.preset = default
+
+# custom ckeditor: enable it in the bsdist extension configuration!
 # see theme/typoscript/pagets/custom.yaml for custom configuration
 #RTE.config.tt_content.bodytext.preset = custom
-
 # e.g. for news
 #RTE.config.tx_news_domain_model_news.bodytext.preset = custom
 
