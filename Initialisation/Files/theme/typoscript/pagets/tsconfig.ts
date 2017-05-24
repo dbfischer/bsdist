@@ -55,14 +55,13 @@ TCEFORM.tt_content {
 # --- RTE ---
 #
 RTE.default.preset = minimal
+# minimal, default, full
+RTE.config.tt_content.bodytext.preset = default
+# see theme/typoscript/pagets/custom.yaml for custom configuration
+#RTE.config.tt_content.bodytext.preset = custom
 
-# for news, see theme/typoscript/pagets/custom.yaml for configuration
-#RTE.config.tt_content.bodytext.preset = full
-RTE.config.tt_content.bodytext.preset = custom
-
-# for news, see theme/typoscript/pagets/custom.yaml for configuration
-#RTE.config.tx_news_domain_model_news.bodytext.preset = full
-RTE.config.tx_news_domain_model_news.bodytext.preset = custom
+# e.g. for news
+#RTE.config.tx_news_domain_model_news.bodytext.preset = custom
 
 
 # --- TCEFORM.tt_content ---
